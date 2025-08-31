@@ -1,0 +1,251 @@
+/*IMPORTA A FONTE POPPINS DO GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*RESET CSS E ESTILO GLOBAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*ESTILIZAÇÃO DO CORPO DA PÁGINA*/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#7321a9, #de981f);
+}
+
+/*CAIXA PRINCIPAL*/
+.wrapper {
+    background-color: #f6f6f6;
+    max-width: 360px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/*CONTEÚDO INTERNO DA CAIXA*/
+.wrapper .conteudo {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+
+    /*coloca os elementos em coluna*/
+    flex-direction: column;
+}
+
+/*---------------------------------------*/
+
+/*ÁREA DOS EMOJIS (EXTERNO)*/
+
+/*1.ESTILO DA ÁREA*/
+.wrapper .externo {
+    height: 135px;
+    width: 135px;
+
+    /*esconde quando passa do limite*/
+    overflow: hidden;
+}
+
+/*2. ESCONDE OS INPUTS DE SELÇÃO DAS ESTRELAS*/
+input[type="radio"] {
+    display: none;
+}
+
+/*3. LISTA DE EMOJIS (EFEITO DE "ROLAR" CONFORME SELECIONE A ESTRELA)*/
+.externo .emojis {
+    height: 500%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*4. ESTILIZAÇÃO DA LI (TAG QUE DITA OS EMOJIS)*/
+.externo li {
+
+    /*cada emoji ocupa 20% do container*/
+    height: 20%;
+    width: 100%;
+
+    /*remove os marcadores da li*/
+    list-style: none;
+
+    /*animação suave*/
+    transition: all 0.3s ease;
+}
+
+/*---------------------------------------*/
+
+/*DESLOCAMENTO DOS EMOJIS*/
+/*
+- As regras dizem qual emoji mostrar no visor dependendo de qual estrela foi selecionada (checked)
+- O margin-top desloca o container da lista de emojis
+- O seletor "~" indica que o estilo será aplicado em elementos irmãos que aparecem depois do input no html*/
+
+#estrela-2:checked~.conteudo .externo .slideimg {
+    margin-top: -135px;
+}
+
+#estrela-3:checked~.conteudo .externo .slideimg {
+    margin-top: -270px;
+}
+
+#estrela-4:checked~.conteudo .externo .slideimg {
+    margin-top: -405px;
+}
+
+#estrela-5:checked~.conteudo .externo .slideimg {
+    margin-top: -540px;
+}
+
+/*AJUSTA AS IMAGENS DO EMOJI*/
+.externo li img {
+    height: 100%;
+    width: 100%;
+}
+
+/*ESPAÇO ACIMA DAS ESTRELAS*/
+.conteudo .estrelas {
+    margin-top: 30px;
+}
+
+/*ESTILO DAS ESTRELAS*/
+.estrelas label {
+    font-size: 30px;
+    margin: 0 3px;
+    color: #ccc;
+}
+
+/*INTERATIVIDADE DAS ESTRELAS*/
+/*
+- Quando o usuário passa o mouse (hover) ou clilca (checked) em uma estrela, todas as anteriores ficam amarelas*/
+#estrela-1:hover~.conteudo .estrelas .estrela-1,
+#estrela-1:checked~.conteudo .estrelas .estrela-1,
+
+#estrela-2:hover~.conteudo .estrelas .estrela-1,
+#estrela-2:hover~.conteudo .estrelas .estrela-2,
+#estrela-2:checked~.conteudo .estrelas .estrela-1,
+#estrela-2:checked~.conteudo .estrelas .estrela-2,
+
+#estrela-3:hover~.conteudo .estrelas .estrela-1,
+#estrela-3:hover~.conteudo .estrelas .estrela-2,
+#estrela-3:hover~.conteudo .estrelas .estrela-3,
+#estrela-3:checked~.conteudo .estrelas .estrela-1,
+#estrela-3:checked~.conteudo .estrelas .estrela-2,
+#estrela-3:checked~.conteudo .estrelas .estrela-3,
+
+#estrela-4:hover~.conteudo .estrelas .estrela-1,
+#estrela-4:hover~.conteudo .estrelas .estrela-2,
+#estrela-4:hover~.conteudo .estrelas .estrela-3,
+#estrela-4:hover~.conteudo .estrelas .estrela-4,
+#estrela-4:checked~.conteudo .estrelas .estrela-1,
+#estrela-4:checked~.conteudo .estrelas .estrela-2,
+#estrela-4:checked~.conteudo .estrelas .estrela-3,
+#estrela-4:checked~.conteudo .estrelas .estrela-4,
+
+#estrela-5:hover~.conteudo .estrelas .estrela-1,
+#estrela-5:hover~.conteudo .estrelas .estrela-2,
+#estrela-5:hover~.conteudo .estrelas .estrela-3,
+#estrela-5:hover~.conteudo .estrelas .estrela-4,
+#estrela-5:hover~.conteudo .estrelas .estrela-5,
+#estrela-5:checked~.conteudo .estrelas .estrela-1,
+#estrela-5:checked~.conteudo .estrelas .estrela-2,
+#estrela-5:checked~.conteudo .estrelas .estrela-3,
+#estrela-5:checked~.conteudo .estrelas .estrela-4,
+#estrela-5:checked~.conteudo .estrelas .estrela-5 {
+    color: #fed151;
+}
+
+/*---------------------------------------*/
+
+/*RODAPÉ TEXTO E NOTA*/
+
+/*1. ESTILO DO RODAPÉ*/
+.wrapper .rodape {
+    height: 55px;
+    width: 100%;
+
+    /*linha divisória superior*/
+    border-top: 1px solid #ccc;
+
+    background: #f2f2f2;
+    border-radius: 0 0 10px 10px;
+    padding: 0 20px;
+    display: flex;
+
+    /*centraliza verticalmente*/
+    align-items: center;
+
+    /*cria um espaço entre o texto e anota (cada um numa ponta)*/
+    justify-content: space-between;
+}
+
+/*2. ESTILO DO SPAN*/
+.rodape span {
+    font-size: 17px;
+    font-weight: 400;
+
+}
+
+/*3. ESTILO TEXTO E NÚMERO*/
+.rodape .texto::before {
+
+    /*texto padrão antes da avaliação*/
+    content: "Classifique sua experiência";
+}
+
+.rodape .numero::before {
+
+    /*nota "limpa" antes da avaliação*/
+    content: "0 de 5";
+
+}
+
+/*---------------------------------------*/
+
+/*TEXTO DINÂMICO PARA CADA ESTRELA*/
+#estrela-1:checked~.rodape .texto::before {
+    content: "Simplesmente odiei"
+}
+
+#estrela-1:checked~.rodape .numero::before {
+    content: "1 de 5";
+
+}
+
+#estrela-2:checked~.rodape .texto::before {
+    content: "Não gostei"
+}
+
+#estrela-2:checked~.rodape .numero::before {
+    content: "2 de 5";
+
+}
+
+#estrela-3:checked~.rodape .texto::before {
+    content: "É legal"
+}
+
+#estrela-3:checked~.rodape .numero::before {
+    content: "3 de 5";
+
+}
+
+#estrela-4:checked~.rodape .texto::before {
+    content: "Gostei"
+}
+
+#estrela-4:checked~.rodape .numero::before {
+    content: "4 de 5";
+
+}
+
+#estrela-5:checked~.rodape .texto::before {
+    content: "Simplesmente amei"
+}
+
+#estrela-5:checked~.rodape .numero::before {
+    content: "5 de 5";
+
+}
