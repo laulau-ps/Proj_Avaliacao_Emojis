@@ -1,4 +1,4 @@
-Página de Avaliação com Emojis
+<h1> Página de Avaliação com Emojis </h1>
 
 📝 Descrição do projeto
 Este é um projeto simples, porém cativante, de uma página web estática que simula um componente interativo de avaliação de produto ou serviço. A aplicação permite que o usuário dê uma nota de 1 a 5 estrelas, com um emoji e um texto de feedback que mudam dinamicamente, tudo isso sem usar JavaScript, utilizando apenas as capacidades do CSS para as interações.
