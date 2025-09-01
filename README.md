@@ -19,8 +19,8 @@
     <p><strong>Font Awesome:</strong> Utilizado para os ícones de estrela.</p>
     <p><strong>Google Fonts:</strong> Para a tipografia.</p>
 
-<h2>⚙️ Como rodar</h2>
-    <p>Para ver a aplicação em funcionamento, basta clonar o repositório e abrir o arquivo index.html em qualquer navegador web. Por se tratar de um projeto estático, não há necessidade de um servidor local ou de qualquer configuração adicional.</p>
+<h2>⚙️ Como acessar</h2>
+    <p>Para ver o projeto em funcionamento, você pode acessá-lo diretamente pelo link de seu site.</p>
 
 <h2>📁 Estrutura de pastas</h2>
     <pre>
